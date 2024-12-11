@@ -44,6 +44,7 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
         int checker = 0;
+        if ( str1.lrngth() == 0) return true;
         if ( (str1.length() == 0) || ( str2.length() == 0) ) return false;
         for ( int i = 0 ; i < str1.length() ; i++){
             char c = str1.charAt(i);
@@ -116,18 +117,18 @@ public class MyString {
          arr2[i] = str2.charAt(i);
         }
         String result = "";
-        for ( int i = 0 ; i < arr1.length ; i++){
+        for ( int i = 0 ; i < arr2.length ; i++){
              char c = arr1[i];
-             for ( int j = 0 ; j < arr2.length ; j++){
-                 char c2 = arr2[j];
+             for ( int j = 0 ; j < arr1.length ; j++){
+                 char c2 = arr1[j];
                  if ( c == c2 ) {
-                     arr2[j] = ' ';
+                     arr1[j] = ' ';
                      break;
              }
           }
          }
-         for ( int x = 0 ; x < arr2.length ; x++){
-             if ( arr2[x] != ' ' ) result += arr2[x]; //buiding the new string
+         for ( int x = 0 ; x < arr1.length ; x++){
+             if ( arr1[x] != ' ' ) result += arr1[x]; //buiding the new string
          }
          return result;
      }
