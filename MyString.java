@@ -1,3 +1,5 @@
+
+
 /**
  * A library of string functions.
  */
@@ -8,6 +10,7 @@ public class MyString {
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
+        System.out.println(remove(hello, "he"));
         //// Put your other tests here.
     }
 
@@ -44,7 +47,7 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
         int checker = 0;
-        if ( str1.length() == 0) return true;
+        if ( str1.isEmpty()) return true;
         if ( (str1.length() == 0) || ( str2.length() == 0) ) return false;
         for ( int i = 0 ; i < str1.length() ; i++){
             char c = str1.charAt(i);
@@ -65,7 +68,8 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString (String str) {
-        String result = ""+ str.charAt(0);
+        if ( str.isEmpty()) return "";
+        String result = " "+ str.charAt(0);
         for ( int i = 1 ; i < str.length() ; i++){
             result += " " + str.charAt(i);
         }
@@ -111,14 +115,14 @@ public class MyString {
         char[] arr1 = new char [ str1.length() ];
         char[] arr2 = new char [ str2.length() ];
         for ( int i = 0 ; i < arr1.length ; i++ ){
-         arr1[i] = str1.charAt(i);
+             arr1[i] = str1.charAt(i);
         }
         for ( int i = 0 ; i < arr2.length ; i++ ){
-         arr2[i] = str2.charAt(i);
+             arr2[i] = str2.charAt(i);
         }
         String result = "";
         for ( int i = 0 ; i < arr2.length ; i++){
-             char c = arr1[i];
+             char c = arr2[i];
              for ( int j = 0 ; j < arr1.length ; j++){
                  char c2 = arr1[j];
                  if ( c == c2 ) {
