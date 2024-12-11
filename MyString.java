@@ -44,7 +44,7 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
         int checker = 0;
-        if ( str1.lrngth() == 0) return true;
+        if ( str1.length() == 0) return true;
         if ( (str1.length() == 0) || ( str2.length() == 0) ) return false;
         for ( int i = 0 ; i < str1.length() ; i++){
             char c = str1.charAt(i);
