@@ -69,7 +69,7 @@ public class MyString {
      */
     public static String spacedString (String str) {
         if ( str.isEmpty()) return "";
-        String result = " "+ str.charAt(0);
+        String result = ""+ str.charAt(0);
         for ( int i = 1 ; i < str.length() ; i++){
             result += " " + str.charAt(i);
         }
